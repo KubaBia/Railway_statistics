@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HOME</title>
+</head>
+<body>
+	{% for connection in result %}
+	<li>Nazwa połączenia:<a href="http://127.0.0.1:8000/connection/{{connection.2}}">{{connection.0}}</a>  Liczba kursów: <b>{{connection.1}}</b></li>
+	{% endfor %}
+</body>
+</html>

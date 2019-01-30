@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript"  src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript"  src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>arrival_delay</th>
+            <th>arrival_time</th>
+            <th>departure_delay</th>
+            <th>departure_time</th>
+            <th>station_name</th>
+            <th>connection</th>
+        </tr>
+    </thead>
+    <tbody>
+          {% for object in result %}
+            <tr>
+              <td>{{object.0}}</td>
+              <td>{{object.1}}</td>
+              <td>{{object.2}}</td>
+              <td>{{object.3}}</td>
+              <td>{{object.4}}</td>
+              <td>{{object.5}}</td>
+              <td>{{object.6}}</td>
+            </tr>
+          {% endfor %}
+    </tbody>
+</table>
+  <script src="{% static 'app.js' %}"></script>
+</body>
+</html>
